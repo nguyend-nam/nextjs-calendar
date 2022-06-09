@@ -15,8 +15,9 @@ const data = [
 storiesOf('components/CalendarCard', module).add('basic', () => {
   return (
     <div>
-      {data.map((user) => (
+      {data.map((user, index) => (
         <CalendarCard
+          key={index}
           name={user.name}
           avatar={user.avatar}
           date={user.date}
