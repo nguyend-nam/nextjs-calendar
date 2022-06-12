@@ -8,6 +8,7 @@ interface CalendarProps {
   month: number
   today: number
   hasEvent: number[]
+  className?: string
 }
 
 const months = [
@@ -26,7 +27,7 @@ const months = [
 ]
 
 export function Calendar(props: CalendarProps) {
-  const { year, month, today, hasEvent } = props
+  const { year, month, today, hasEvent, className } = props
 
   const renderDayList = useMemo(() => {
     /* Calculate start day of current month (2 -> 8) */
@@ -60,7 +61,7 @@ export function Calendar(props: CalendarProps) {
               className={cx('py-1', {
                 'bg-gray-900 rounded-full text-white font-medium w-8 aspect-square mx-auto':
                   i + 1 - daysOfPrevMonth === today,
-                'text-indigo-600 font-medium': hasEvent.includes(
+                'text-pink-600 font-medium': hasEvent.includes(
                   i + 1 - daysOfPrevMonth,
                 ),
               })}
@@ -84,16 +85,16 @@ export function Calendar(props: CalendarProps) {
   }, [year, month, today, hasEvent])
 
   return (
-    <div className="max-w-sm">
+    <div className={cx('max-w-sm', className)}>
       <div className="flex justify-between mb-7">
         <button>
-          <IconAngleLeftSolid className="h-5 w-5 fill-gray-400" />
+          <IconAngleLeftSolid className="h-5 w-5 fill-gray-400 hover:fill-gray-500" />
         </button>
         <button className="text-xl font-semibold">
           {months[(month - 1) % 12]}
         </button>
         <button>
-          <IconAngleRightSolid className="h-5 w-5 fill-gray-400" />
+          <IconAngleRightSolid className="h-5 w-5 fill-gray-400 hover:fill-gray-500" />
         </button>
       </div>
 
