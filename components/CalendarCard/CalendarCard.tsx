@@ -1,6 +1,7 @@
 import { IconCalendarSolid } from 'components/icons/components/IconCalendarSolid'
 import { IconLocationDotSolid } from 'components/icons/components/IconLocationDotSolid'
 import { IconEllipsisHSolid } from 'components/icons/components/IconEllipsisHSolid'
+import cx from 'classnames'
 
 interface UserProps {
   name: string
@@ -8,14 +9,15 @@ interface UserProps {
   date: string
   time: string
   location: string
+  className?: string
 }
 
 export function CalendarCard(props: UserProps) {
-  const { name, avatar, date, time, location } = props
+  const { name, avatar, date, time, location, className } = props
 
   return (
-    <div className="min-w-max bg-white">
-      <div className="flex items-center p-1 pt-5 pb-5">
+    <div className={cx('min-w-max bg-white', className)}>
+      <div className="flex items-center p-1 pt-6 pb-6">
         <img
           className="rounded-full h-14 w-14 mr-2.5"
           src={avatar}
@@ -39,7 +41,7 @@ export function CalendarCard(props: UserProps) {
         </div>
 
         <button>
-          <IconEllipsisHSolid className="h-5 w-5 fill-gray-500" />
+          <IconEllipsisHSolid className="h-5 w-5 fill-gray-500 hover:fill-pink-700" />
         </button>
       </div>
     </div>

@@ -11,10 +11,16 @@ import { useAuthContext } from 'context/auth'
 import { useEffect, useState } from 'react'
 import { IconBookOpen } from 'components/icons/components/IconBookOpen'
 import { IconSwitchVertical } from 'components/icons/components/IconSwitchVertical'
+import { IconBell } from 'components/icons/components/IconBell'
 
 const menuItems = [
   { name: 'Dashboard', href: ROUTES.DASHBOARD, Icon: IconHome },
   { name: 'Forms', href: ROUTES.FORMS, Icon: IconTable },
+  {
+    name: 'Calendar',
+    href: ROUTES.CALENDAR,
+    Icon: IconBell,
+  },
   {
     name: 'Data fetching',
     href: ROUTES.DATA_FETCHING,

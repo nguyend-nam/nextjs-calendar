@@ -3,4 +3,5 @@ export const ROUTES = {
   DASHBOARD: '/',
   FORMS: '/forms',
   DATA_FETCHING: '/data-fetching',
+  CALENDAR: '/calendar',
 }
