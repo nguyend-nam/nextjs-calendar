@@ -77,15 +77,15 @@ const CalendarPage = () => {
             />
           ))}
         </div>
-        <div className="grow">
+        <div className="grow max-w-sm">
           <Calendar
-            className="mt-4 mb-8 xl:mr-0 mx-auto"
+            className="mt-4 mb-8 xl:mr-0"
             year={currDate.year}
             month={currDate.month}
             today={currDate.day}
             hasEvent={currDate.hasEvent}
           />
-          <Button className="w-full" appearance="primary">
+          <Button className="w-full max-w-sm" appearance="primary">
             Add event
           </Button>
         </div>
